@@ -39,7 +39,7 @@
 <p>
       The <code>Configuration</code> interface defines a whole bunch of methods.
       Implementing these methods all from scratch can be quite hard. Because of
-      that the <code><a href="../apidocs/org/apache/commons/configuration2/AbstractConfiguration.html">
+      that the <code><a >
       AbstractConfiguration</a></code> class exists. This class serves as a
       common base class for most of the <code>Configuration</code> implementations
       in <i>Commons Configuration</i> and provides a great deal of the
@@ -129,7 +129,7 @@ long longValue = config.getLong("NonExistingProperty");
       generated from a single string. To achieve this, an
       <code>AbstractConfiguration</code> instance collaborates with an object
       implementing the
-      <code><a href="../apidocs/org/apache/commons/configuration2/convert/ListDelimiterHandler.html">
+      <code><a >
       ListDelimiterHandler</a></code> interface. This interface defines methods
       for dealing with objects that may contain multiple values. Examples of
       such complex objects are arrays, lists, and strings containing a specific
@@ -140,7 +140,7 @@ long longValue = config.getLong("NonExistingProperty");
     
 <p>
       Per default, <code>AbstractConfiguration</code> uses an instance of the
-      <code><a href="../apidocs/org/apache/commons/configuration2/convert/DisabledListDelimiterHandler.html">
+      <code><a >
       DisabledListDelimiterHandler</a></code> class as list handler. This
       class can deal with lists and arrays, but it does not recognize any list
       delimiter characters in strings. (Hence the name, as splitting of strings
@@ -149,7 +149,7 @@ long longValue = config.getLong("NonExistingProperty");
     
 <p>
       An alternative implementation of <code>ListDelimiterHandler</code> is
-      <code><a href="../apidocs/org/apache/commons/configuration2/convert/DefaultListDelimiterHandler.html">
+      <code><a >
       DefaultListDelimiterHandler</a></code>. This class actually supports
       string splitting; the list delimiter character has to be passed to the
       constructor. Whenever a property is added to the configuration (or the
@@ -327,7 +327,7 @@ java.home = ${env:JAVA_HOME}
 <p>
         Commons configuration comes with a number of default prefix interpolators in addition
         to the few demonstrated above. The full list can be found in the documentation of
-        the <code><a href="../apidocs/org/apache/commons/configuration2/interpol/ConfigurationInterpolator.html#getDefaultPrefixLookups">
+        the <code><a >
         ConfigurationInterpolator.getDefaultPrefixLookups()</a></code> method. This method returns a map of 
         standard interpolation lookup objects keyed by prefix, which are enabled by default in all 
         interpolation operations performed through the <code>Configuration</code> interface. Prior to version 
@@ -336,7 +336,7 @@ java.home = ${env:JAVA_HOME}
         types of interpolation performed in their applications. The system property in question is named
         <code>org.apache.commons.configuration2.interpol.ConfigurationInterpolator.defaultPrefixLookups</code>
         and is expected to contain a comma-separated list of names from the
-        <code><a href="../apidocs/org/apache/commons/configuration2/interpol/DefaultLookups.html">DefaultLookups</a></code>
+        <code><a >DefaultLookups</a></code>
         enum. For example, launching an application with the system property given below will only enable the
         <code>sys</code> and <code>env</code> lookups.
     </p>
@@ -348,9 +348,9 @@ java.home = ${env:JAVA_HOME}
 <p>
         It is also important to note that starting in version <code>2.8.0</code>, several previously enabled
         default lookups were changed to be disabled by default. These include the
-        <code><a href="../apidocs/org/apache/commons/configuration2/interpol/DefaultLookups.html#DNS">dns</a></code>,
-        <code><a href="../apidocs/org/apache/commons/configuration2/interpol/DefaultLookups.html#URL">url</a></code>, and
-        <code><a href="../apidocs/org/apache/commons/configuration2/interpol/DefaultLookups.html#SCRIPT">script</a></code> lookups.
+        <code><a >dns</a></code>,
+        <code><a >url</a></code>, and
+        <code><a >script</a></code> lookups.
         These lookups are still present in the library but must be explicitly enabled by either
         </p>
 <ol style="list-style-type: decimal"> 
@@ -372,7 +372,7 @@ java.home = ${env:JAVA_HOME}
       explains some approaches for adding your own interpolation facilities.
       Under the hood the implementation of interpolation relies on objects
       implementing the
-      <code><a href="../apidocs/org/apache/commons/configuration2/interpol/Lookup.html">
+      <code><a >
       Lookup</a></code> interface. <code>Lookup</code> defines a simple
       <code>lookup()</code> method that must be implemented by custom
       implementations; it expects the name of a variable as argument and
@@ -383,7 +383,7 @@ java.home = ${env:JAVA_HOME}
     
 <p>
       It is now possible to create your own implementation of <code>Lookup</code>
-      and configure a <a href="howto_builder.html">configuration builder</a>
+      and configure a <a href="howto_builders.html">configuration builder</a>
       (builders are introduced in the next chapter of this user's guide) to
       make it available for all configuration objects it creates under a custom
       prefix. We will show how this can be achieved. The first step is to
@@ -410,7 +410,7 @@ public class EchoLookup implements Lookup
       Now we want this class to be called for variables with the prefix
       <code>echo</code>. For this purpose the <code>EchoLookup</code> class
       has to be registered at the
-      <code><a href="../apidocs/org/apache/commons/configuration2/interpol/ConfigurationInterpolator.html">
+      <code><a >
       ConfigurationInterpolator</a></code> instance of our configuration with
       the desired prefix. Each <code>Configuration</code> object is associated
       with a <code>ConfigurationInterpolator</code> object that handles variable
@@ -550,7 +550,7 @@ PropertiesConfiguration config = builder.getConfiguration();
     
 <p>
       As was already mentioned when discussing the
-      <code><a href="../apidocs/org/apache/commons/configuration2/Configuration.html">
+      <code><a >
       Configuration</a></code> interface, there are various <code>get()</code>
       methods returning property values in different target data types. If
       necessary, a data type conversion is performed. Take a look at the
@@ -656,7 +656,7 @@ int theAnswer = config.getInt("answer");
       standard types out of the box. In addition to the result types of the
       <code>get()</code> methods in the <code>Configuration</code> interface,
       some more types are supported. These are listed in the documentation of the
-      <code><a href="../apidocs/org/apache/commons/configuration2/DataConfiguration.html">
+      <code><a >
       DataConfiguration</a></code> class. <code>DataConfiguration</code> is a
       <i>decorator</i> providing additional data type conversion methods for
       more target types; these additional methods are implemented on top of the
@@ -667,7 +667,7 @@ int theAnswer = config.getInt("answer");
       If your application deals with special objects, there may be the
       requirement to extend the conversion capabilities offered by the
       library. To support this use case, there is the
-      <code><a href="../apidocs/org/apache/commons/configuration2/convert/ConversionHandler.html">
+      <code><a >
       ConversionHandler</a></code> interface. Each instance of a configuration
       class derived from <code>AbstractConfiguration</code> is associated with
       such a <code>ConversionHandler</code> object. The interface defines
@@ -689,7 +689,7 @@ int theAnswer = config.getInt("answer");
 <p>
       If the conversion facilities provided by <i>Commons Configuration</i>
       are not to be fully replaced, but only extended by some custom types,
-      the class <code><a href="../apidocs/org/apache/commons/configuration2/convert/DefaultConversionHandler.html">
+      the class <code><a >
       DefaultConversionHandler</a></code> is a good starting point. As the name
       implies, an instance of this class is used per default for doing type
       conversions. <code>DefaultConversionHandler</code> has some protected
@@ -775,7 +775,7 @@ config.setConversionHandler(handler);
       there is a generic mechanism for automatically reading encoded properties
       and transforming them into plain text before they are handed over to the
       caller. A key role in this mechanism plays the
-      <code><a href="../apidocs/org/apache/commons/configuration2/ConfigurationDecoder.html">
+      <code><a >
       ConfigurationDecoder</a></code> interface.
     </p>
     
@@ -784,7 +784,7 @@ config.setConversionHandler(handler);
       which expects a string as input and returns a decoded string. It should be
       easy for an application to provide a custom implementation for the
       encoding algorithm it uses. The
-      <code><a href="../apidocs/org/apache/commons/configuration2/ImmutableConfiguration.html">
+      <code><a >
       ImmutableConfiguration</a></code> interface defines two overloaded methods
       for querying the values of encoded properties:
     </p>
@@ -803,7 +803,7 @@ config.setConversionHandler(handler);
       <code>ConfigurationDecoder</code> to be used as argument. The other
       variant makes use of a decoder associated with this configuration. For
       this purpose
-      <code><a href="../apidocs/org/apache/commons/configuration2/AbstractConfiguration.html">
+      <code><a >
       AbstractConfiguration</a></code> offers a property named
       <i>configurationDecoder</i>. Making use of this property simplifies
       access to encoded properties: When the central configuration object is

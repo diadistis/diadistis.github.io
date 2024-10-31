@@ -71,12 +71,12 @@
 <p>
       Objects implementing the <code>Configuration</code> interface can be
       associated with a
-      <code><a href="../apidocs/org/apache/commons/configuration2/sync/Synchronizer.html">
+      <code><a >
       Synchronizer</a></code> object. This synchronizer is triggered on each
       access to the configuration (distinguishing between read and write
       access). It can decide whether access is allowed or block the calling
       thread until it is safe to continue. Per default, a Configuration object
-      uses a <code><a href="../apidocs/org/apache/commons/configuration2/sync/NoOpSynchronizer.html">
+      uses a <code><a >
       NoOpSynchronizer</a></code> instance. As the name implies, this class does
       nothing to protect its associated configuration against concurrent
       access; its methods are just empty dummies. It is appropriate for use
@@ -87,7 +87,7 @@
       If multiple threads are involved, Configuration objects have to be
       thread-safe. For this purpose, there is another implementation of
       <code>Synchronizer</code>:
-      <code><a href="../apidocs/org/apache/commons/configuration2/sync/ReadWriteSynchronizer.html">
+      <code><a >
       ReadWriteSynchronizer</a></code>. This class is based on the
       <code>ReentrantReadWriteLock</code> class from the JDK. It implements
       the typical behavior desired when accessing a configuration in a
@@ -118,7 +118,7 @@
 <p>
       Rather than setting the synchronizer on an existing
       <code>Configuration</code> instance, it is usually better to configure
-      the <a href="howto_builder.html">configuration builder</a> responsible
+      the <a href="howto_builders.html">configuration builder</a> responsible
       for the creation of the configuration to set the correct synchronizer
       directly after a new instance has been created. This is done in the usual
       way by setting the corresponding property of a parameters object passed
@@ -158,7 +158,7 @@ PropertiesConfiguration config = builder.getConfiguration();
 <h3><a name="Basic_operations_and_thread-safety"></a>Basic operations and thread-safety</h3>
     
 <p>
-      <code><a href="../apidocs/org/apache/commons/configuration2/AbstractConfiguration.html">
+      <code><a >
       AbstractConfiguration</a></code> already provides a major part of the
       implementation of correctly interacting with a <code>Synchronizer</code>
       object. Methods for reading configuration data (such as
@@ -175,7 +175,7 @@ PropertiesConfiguration config = builder.getConfiguration();
       Classes derived from <code>AbstractConfiguration</code> sometimes offer
       specific methods for accessing properties. For instance, hierarchical
       configurations offer operations on whole subtrees, or
-      <code><a href="../apidocs/org/apache/commons/configuration2/INIConfiguration.html">
+      <code><a >
       INIConfiguration</a></code> allows querying specific sections. These
       methods are also aware of the associated <code>Synchronizer</code> and
       invoke it correctly.
@@ -186,7 +186,7 @@ PropertiesConfiguration config = builder.getConfiguration();
       object allowing direct control over the <code>Synchronizer</code>:
       <code>lock()</code> and <code>unlock()</code>. Both methods expect an
       argument of type
-      <code><a href="../apidocs/org/apache/commons/configuration2/sync/LockMode.html">
+      <code><a >
       LockMode</a></code> which tells them whether the configuration is to be
       locked for read or write access. These methods can be used to extend the
       locking behavior of standard methods. For instance, if multiple properties
@@ -273,7 +273,7 @@ finally
 <ul>
         
 <li>All hierarchical configurations derived from
-        <code><a href="../apidocs/org/apache/commons/configuration2/BaseHierarchicalConfiguration.html">
+        <code><a >
         BaseHierarchicalConfiguration</a></code> internally operate on a nodes
         structure implemented by immutable nodes. This is beneficial for
         concurrent access. It is even possible to share (sub) trees of
@@ -293,7 +293,7 @@ finally
         which the sequence of generated configuration events is important, a
         fully functional synchronizer object should be set.</li>
         
-<li><code><a href="../apidocs/org/apache/commons/configuration2/CombinedConfiguration.html">
+<li><code><a >
         CombinedConfiguration</a></code> is a bit special regarding lock
         handling. Although derived from <code>BaseHierarchicalConfiguration</code>,
         this class is not thread-safe per default. So if accessed by multiple
@@ -313,11 +313,11 @@ finally
         using a <code>NoOpSynchronizer</code>.</li>
         
 <li>Derived from <code>CombinedConfiguration</code> is
-        <code><a href="../apidocs/org/apache/commons/configuration2/DynamicCombinedConfiguration.html">
+        <code><a >
         DynamicCombinedConfiguration</a></code> which extends its base class by
         the ability to manage multiple combined configuration instances. The
         current instance is selected based on a key constructed by a
-        <code><a href="../apidocs/org/apache/commons/configuration2/interpol/ConfigurationInterpolator.html">
+        <code><a >
         ConfigurationInterpolator</a></code> instance. If this yields a key
         which has not been encountered before, a new <code>CombinedConfiguration</code>
         object is created. Here again it turns out that even a read access to a
@@ -339,7 +339,7 @@ finally
       multiple threads - provided that they are initialized in a safe way.
       For the safe initialization of <code>Configuration</code> objects
       specialized <a href="howto_builders.html">builders</a> are responsible. These are classes derived from
-      <code><a href="../apidocs/org/apache/commons/configuration2/builder/BasicConfigurationBuilder.html">
+      <code><a >
       BasicConfigurationBuilder</a></code>. Configuration builders are designed
       to be thread-safe: their <code>getConfiguration()</code> method is
       synchronized, so that configurations can be created and initialized in a

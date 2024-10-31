@@ -37,10 +37,10 @@
 <h2><a name="Combined_Configuration"></a>Combined Configuration</h2>
     
 <p>
-      The <code><a href="../apidocs/org/apache/commons/configuration2/CombinedConfiguration.html">
+      The <code><a >
       CombinedConfiguration</a></code> class provides an alternative for handling
       multiple configuration sources. Its API is very similar to the
-      <code><a href="../apidocs/org/apache/commons/configuration2/CompositeConfiguration.html">
+      <code><a >
       CompositeConfiguration</a></code> class, which was discussed in the
       <a href="howto_compositeconfiguration.html#Composite_Configuration_Details">previous
       section</a>. There are the following differences however:
@@ -103,15 +103,15 @@
     
 <p>
       A <i>node combiner</i> is an object of a class that inherits from the
-      abstract <code><a href="../apidocs/org/apache/commons/configuration2/tree/NodeCombiner.html">NodeCombiner</a></code>
+      abstract <code><a >NodeCombiner</a></code>
       class. This class defines an abstract <code>combine()</code> method, which
       takes the root nodes of two hierarchical configurations and returns the
       root node of the combined node structure. It is up to a concrete
       implementation how this combined structure will look like. <i>Commons
       Configuration</i> ships with three concrete implementations
-      <code><a href="../apidocs/org/apache/commons/configuration2/tree/OverrideCombiner.html">OverrideCombiner</a></code>,
-      <code><a href="../apidocs/org/apache/commons/configuration2/tree/MergeCombiner.html">MergeCombiner</a></code>
-      and <code><a href="../apidocs/org/apache/commons/configuration2/tree/UnionCombiner.html">UnionCombiner</a></code>,
+      <code><a >OverrideCombiner</a></code>,
+      <code><a >MergeCombiner</a></code>
+      and <code><a >UnionCombiner</a></code>,
       which implement an override, merge, and union semantics respectively.
     </p>
     
@@ -837,7 +837,7 @@ cc.addConfiguration(builder2.getConfiguration());
       Remember that a <code>CombinedConfiguration</code> is just a view over a
       set of other configurations processed by a <code>NodeCombiner</code>. The
       combiner sets up a nodes structure consisting of
-      <code><a href="../apidocs/org/apache/commons/configuration2/tree/ImmutableNode.html">
+      <code><a >
       ImmutableNode</a></code> objects. Some of these nodes are likely to be
       shared with the child configurations. Because the nodes are immutable
       updates on the combined configuration cause nodes to be replaced in the

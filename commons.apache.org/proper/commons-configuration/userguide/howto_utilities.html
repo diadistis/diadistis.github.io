@@ -50,7 +50,7 @@
 <p>
       Often it is required to copy the data of one <code>Configuration</code>
       object into another one. For this purpose the
-      <code><a href="../apidocs/org/apache/commons/configuration2/AbstractConfiguration.html">
+      <code><a >
       AbstractConfiguration</a></code> class (which serves as the base class for
       most of the configuration implementations shipped with this library)
       provides two methods implementing a basic copy operation:
@@ -83,7 +83,7 @@
         configurations. Most of the configuration implementations provided by
         <i>Commons Configurations</i> support cloning. The
         <code>cloneConfiguration()</code> method of
-        <code><a href="../apidocs/org/apache/commons/configuration2/ConfigurationUtils.html">
+        <code><a >
         ConfigurationUtils</a></code> can be used for creating a copy of an
         arbitrary <code>Configuration</code> object. This method checks whether
         the passed in configuration implements the <code>Cloneable</code>
@@ -123,11 +123,11 @@ HierarchicalConfiguration&lt;?&gt; hc =
     
 <p>
       The <code>convertToHierarchical()</code> method of
-      <code><a href="../apidocs/org/apache/commons/configuration2/ConfigurationUtils.html">
+      <code><a >
       ConfigurationUtils</a></code> checks whether the passed in object
       is already a hierarchical configuration. If this is the case, it is
       returned unchanged. Otherwise, a new instance of
-      <code><a href="../apidocs/org/apache/commons/configuration2/BaseHierarchicalConfiguration.html">
+      <code><a >
       BaseHierarchicalConfiguration</a></code> is created, and the properties of
       the source configuration are copied into it.
     </p>
@@ -157,7 +157,7 @@ HierarchicalConfiguration&lt;?&gt; hc =
       To solve this problem, it is possible to specify an alternative expression
       engine that will be used for the conversion. For instance, if you know that
       your property keys can contain brackets, you could use an instance of
-      <code><a href="../apidocs/org/apache/commons/configuration2/tree/DefaultExpressionEngine.html">
+      <code><a >
       DefaultExpressionEngine</a></code> that is configured with a different
       index marker. This could look as follows:
     </p>
@@ -185,7 +185,7 @@ HierarchicalConfiguration&lt;?&gt; hc =
       CombinedConfiguration</a> flat configurations contained in the combined
       configuration are also converted into hierarchical configurations using
       the methods discussed here. The
-      <code><a href="../apidocs/org/apache/commons/configuration2/CombinedConfiguration.html">
+      <code><a >
       CombinedConfiguration</a></code> class
       defines the method <code>setConversionExpressionEngine()</code>, which
       can be called to specify an expression engine to be used during this
@@ -204,7 +204,7 @@ HierarchicalConfiguration&lt;?&gt; hc =
       be the requirement of converting from <code>Properties</code> objects to
       <code>Configuration</code> objects and vice versa. For this purpose an
       utility class can be used:
-      <code><a href="../apidocs/org/apache/commons/configuration2/ConfigurationConverter.html">
+      <code><a >
       ConfigurationConverter</a></code>.
     </p>
     
@@ -240,7 +240,7 @@ Properties processConfiguration(Properties props)
     
 <p>
       Please refer to the Javadocs of
-      <code><a href="../apidocs/org/apache/commons/configuration2/ConfigurationConverter.html">
+      <code><a >
       ConfigurationConverter</a></code> to learn more about the available
       conversion methods and their limitations.
     </p>
@@ -262,7 +262,7 @@ Properties processConfiguration(Properties props)
     </p>
     
 <p>
-      <code><a href="../apidocs/org/apache/commons/configuration2/AbstractConfiguration.html">
+      <code><a >
       AbstractConfiguration</a></code> provides the method
       <code>interpolatedConfiguration()</code>. This method creates a clone of
       the current configuration and then performs interpolation on all of its
@@ -270,7 +270,7 @@ Properties processConfiguration(Properties props)
       basically the same content as the original configuration, but with all
       variables replaced by their actual values (as far as this was possible).
       The following code fragment shows how a
-      <code><a href="../apidocs/org/apache/commons/configuration2/PropertiesConfiguration.html">
+      <code><a >
       PropertiesConfiguration</a></code> object can be saved in a way that the
       resulting properties file does not contain any variables:
     </p>
@@ -304,10 +304,10 @@ handler.save("external_config.properties");
       you do not want to provide a special error handler, but only need to
       propagate the exception that caused the error event, you can make use of
       a convenience method of the
-      <code><a href="../apidocs/org/apache/commons/configuration2/ConfigurationUtils.html">
+      <code><a >
       ConfigurationUtils</a></code> class: <code>enableRuntimeExceptions()</code>
       registers a special error listener at the passed in configuration that
-      throws a <code><a href="../apidocs/org/apache/commons/configuration2/ConfigurationRuntimeException.html">
+      throws a <code><a >
       ConfigurationRuntimeException</a></code> exception for each received
       error event. The following code fragment shows an example of using this
       method:
@@ -324,7 +324,7 @@ String value = config.getString("myKey");
 <p>
       <code>enableRuntimeExceptions()</code> can be called for all
       <code>Configuration</code> implementations that implement the
-      <code><a href="../apidocs/org/apache/commons/configuration2/event/EventSource.html">
+      <code><a >
       EventSource</a></code> interface (which is the case for almost all configuration
       classes provided by this library). Of course, the affected implementation
       must support the mechanism of error events, otherwise the registered
@@ -364,7 +364,7 @@ String value = config.getString("myKey");
     
 <p>
       There is one helper class which can simplify this migration:
-      <code><a href="../apidocs/org/apache/commons/configuration2/builder/BuilderConfigurationWrapperFactory.html">
+      <code><a >
       BuilderConfigurationWrapperFactory</a></code>. This class is capable of
       creating special proxy objects implementing the <code>ImmutableConfiguration</code>
       interface which behind the scenes delegate to the managed configuration
@@ -384,7 +384,7 @@ String value = config.getString("myKey");
       The instance can be configured with an enumeration constant of the
       <code>EventSourceSupport</code> class which determines whether and how the
       proxy objects created by this factory should implement the
-      <code><a href="../apidocs/org/apache/commons/configuration2/event/EventSource.html">
+      <code><a >
       EventSource</a></code> interface. Then proxy objects can be constructed by
       calling the <code>createBuilderConfigurationWrapper()</code> method passing
       in the interface class and the configuration builder instance to be

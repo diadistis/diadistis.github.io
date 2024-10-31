@@ -47,7 +47,7 @@
       prefers a combined view on its configuration data. <i>Commons
       Configuration</i> supports this use case with a special configuration
       builder implementation:
-      <code><a href="../apidocs/org/apache/commons/configuration2/builder/combined/CombinedConfigurationBuilder.html">
+      <code><a >
       CombinedConfigurationBuilder</a></code>.
     </p>
     
@@ -92,7 +92,7 @@
       <code>XMLConfiguration</code> can be used to load configuration data from
       a single source. <code>CombinedConfigurationBuilder</code> now allows
       combining multiple configuration sources to a single
-      <code><a href="../apidocs/org/apache/commons/configuration2/CombinedConfiguration.html">
+      <code><a >
       CombinedConfiguration</a></code> object. The sources to be loaded have to
       be defined in an XML document with a specific structure, a so-called
       <i>configuration definition file</i>. The following listing shows a
@@ -129,7 +129,7 @@
       configuration builders</a>: A new instance is created, and the
       <code>configure()</code> method is called with initialization parameters
       (<code>CombinedConfigurationBuilder</code> is derived from
-      <code><a href="../apidocs/org/apache/commons/configuration2/builder/BasicConfigurationBuilder.html">
+      <code><a >
       BasicConfigurationBuilder</a></code>; so all features common to
       configuration builders are available here as well). The combined configuration collecting
       all sources defined in the configuration definition file can then be
@@ -230,7 +230,7 @@ CombinedConfiguration config = builder.getConfiguration();
     
 <p>
       In this example, the <code>combined()</code> method of
-      <code><a href="../apidocs/org/apache/commons/configuration2/builder/fluent/Parameters.html">
+      <code><a >
       Parameters</a></code> is used to obtain a special parameters object for a
       combined configuration builder. Internally, again a builder for
       constructing an <code>XMLConfiguration</code> for the definition file is
@@ -274,7 +274,7 @@ CombinedConfiguration config = builder.getConfiguration();
 <p>
       If you do not need any specific initialization and just want to read the
       configuration definition from an XML document, the
-      <code><a href="../apidocs/org/apache/commons/configuration2/builder/fluent/Configurations.html">
+      <code><a >
       Configurations</a></code> helper class introduced in section
       <a href="howto_filebased.html#Making_it_easier">Making it easier</a> is
       made for you. It offers convenience methods for creating a builder for
@@ -676,11 +676,11 @@ CombinedConfigurationBuilder builder = configs.combinedBuilder("path/to/definiti
         attribute. Which configuration class is created by this tag
         depends on the extension of the file to load: If the extension
         is ".xml", a
-        <code><a href="../apidocs/org/apache/commons/configuration2/XMLPropertiesConfiguration.html">
+        <code><a >
         XMLPropertiesConfiguration</a></code> object is
         created, which is able to process the XML properties format
         introduced in Java 5.0. Otherwise a
-        <code><a href="../apidocs/org/apache/commons/configuration2/PropertiesConfiguration.html">
+        <code><a >
         PropertiesConfiguration</a></code> object is created, the default reader
         for properties files.</dd>
         
@@ -689,7 +689,7 @@ CombinedConfigurationBuilder builder = configs.combinedBuilder("path/to/definiti
 <dd>The <code>xml</code> element can be used to load XML configuration
         files. It also uses the <code>fileName</code> attribute to
         determine the name of the file to load and creates an instance
-        of <code><a href="../apidocs/org/apache/commons/configuration2/XMLConfiguration.html">
+        of <code><a >
         XMLConfiguration</a></code>.</dd>
         
 <dt>jndi</dt>
@@ -697,7 +697,7 @@ CombinedConfigurationBuilder builder = configs.combinedBuilder("path/to/definiti
 <dd>As the name implies, with this element JNDI resources can be
         included in the resulting configuration. Under the hood this is
         done by an instance of the
-        <code><a href="../apidocs/org/apache/commons/configuration2/JndiConfiguration.html">
+        <code><a >
         JndiConfiguration</a></code> class. The <code>prefix</code> attribute
         can be used to select a subset of the JNDI tree.</dd>
         
@@ -707,16 +707,16 @@ CombinedConfigurationBuilder builder = configs.combinedBuilder("path/to/definiti
         files in the NeXT / OpenStep or Mac OS X format. Again the
         name of the file to load is specified through the
         <code>fileName</code> attribute. If a XML file is specified,
-        a <code><a href="../apidocs/org/apache/commons/configuration2/plist/XMLPropertyListConfiguration.html">
+        a <code><a >
         XMLPropertyListConfiguration</a></code> object is created
         to process the file. Otherwise, this task is delegated to a
-        <code><a href="../apidocs/org/apache/commons/configuration2/plist/PropertyListConfiguration.html">
+        <code><a >
         PropertyListConfiguration</a></code> instance.</dd>
         
 <dt>system</dt>
         
 <dd>With this element an instance of
-        <code><a href="../apidocs/org/apache/commons/configuration2/SystemConfiguration.html">
+        <code><a >
         SystemConfiguration</a></code> is added to the resulting configuration
         allowing access to system properties. <i>Note:</i> Using this element
         system properties are directly made available. Alternatively the
@@ -728,7 +728,7 @@ CombinedConfigurationBuilder builder = configs.combinedBuilder("path/to/definiti
         
 <dd>This tag can be used to include an ini file into the resulting
         combined configuration. Behind the scenes an instance of
-        <code><a href="../apidocs/org/apache/commons/configuration2/INIConfiguration.html">
+        <code><a >
         INIConfiguration</a></code> is used to load the ini file.</dd>
         
 <dt>env</dt>
@@ -1093,15 +1093,15 @@ CombinedConfigurationBuilder builder = configs.combinedBuilder("path/to/definiti
       To enable reloading support for combined configurations, <i>Commons
       Configuration</i> provides a special extension of
       <code>CombinedConfigurationBuilder</code>:
-      <code><a href="../apidocs/org/apache/commons/configuration2/builder/combined/ReloadingCombinedConfigurationBuilder.html">
+      <code><a >
       ReloadingCombinedConfigurationBuilder</a></code>. The relation between the
       two is analogous to the relation between
-      <code><a href="../apidocs/org/apache/commons/configuration2/builder/FileBasedConfigurationBuilder.html">
+      <code><a >
       FileBasedConfigurationBuilder</a></code> and
-      <code><a href="../apidocs/org/apache/commons/configuration2/builder/ReloadingFileBasedConfigurationBuilder.html">
+      <code><a >
       ReloadingFileBasedConfigurationBuilder</a></code>. The reloading-enabled
       variant of combined configuration builder manages and exposes a special
-      <code><a href="../apidocs/org/apache/commons/configuration2/reloading/ReloadingController.html">
+      <code><a >
       ReloadingController</a></code> that can be used to trigger reloading
       checks. (Please refer to the chapter about <a href="howto_reloading.html">reloading</a>
       for a detailed description of the reloading implementation in <i>Commons
@@ -1143,7 +1143,7 @@ CombinedConfigurationBuilder builder = configs.combinedBuilder("path/to/definiti
       possible. This may not be supported by all types of configuration
       sources, but it is for instance for file-based configuration sources; in
       this case the builder created for a source with enabled reloading support
-      is of type <code><a href="../apidocs/org/apache/commons/configuration2/builder/ReloadingFileBasedConfigurationBuilder.html">
+      is of type <code><a >
       ReloadingFileBasedConfigurationBuilder</a></code>.
     </p>
     
@@ -1235,7 +1235,7 @@ CombinedConfiguration cc = builder.getConfiguration();
       engine for the resulting configuration. So we can query our properties
       using the convenient XPATH syntax. We also enabled list delimiter parsing
       by specifying a
-      <code><a href="../apidocs/org/apache/commons/configuration2/convert/DefaultListDelimiterHandler.html">
+      <code><a >
       DefaultListDelimiterHandler</a></code> object. (Note the syntax for
       creating a bean instance via its constructor.) By providing the <code>config-name</code>
       attribute we have given all configuration sources a name. These names can
@@ -1274,7 +1274,7 @@ Configuration tab2Config = ccAdd.getConfiguration("tab2");
       trigger has to be used to ensure that the reloading controller managed by
       the builder is called in regular intervals. This can be done in the same
       way as for simple configuration sources, for instance by setting up a
-      <code><a href="../apidocs/org/apache/commons/configuration2/reloading/PeriodicReloadingTrigger.html">
+      <code><a >
       PeriodicReloadingTrigger</a></code> object:
     </p>
     
@@ -1293,7 +1293,7 @@ trigger.start();
       declare instances of this class in a configuration definition file, too.
       <code>CombinedConfigurationBuilder</code> supports this use case by
       registering a
-      <code><a href="../apidocs/org/apache/commons/configuration2/builder/combined/ConfigurationBuilderProvider.html">
+      <code><a >
       ConfigurationBuilderProvider</a></code> object.
     </p>
     
@@ -1319,7 +1319,7 @@ trigger.start();
 <p>
       There is already a fully functional implementation of the
       <code>ConfigurationBuilderProvider</code> interface available in the class
-      <code><a href="../apidocs/org/apache/commons/configuration2/builder/combined/BaseConfigurationBuilderProvider.html">
+      <code><a >
       BaseConfigurationBuilderProvider</a></code> class. When creating an
       instance the following information has to be passed:
       </p>
@@ -1486,9 +1486,9 @@ CombinedConfiguration config = builder.getConfiguration();
       The special parameters object for <code>CombinedConfigurationBuilder</code>
       has already been mentioned and used within examples before. It can be obtained
       from the <code>combined()</code> method of a
-      <code><a href="../apidocs/org/apache/commons/configuration2/builder/fluent/Parameter.html">
+      <code><a >
       Parameters</a></code> instance. Its type is
-      <code><a href="../apidocs/org/apache/commons/configuration2/builder/fluent/CombinedBuilderParameters.html">
+      <code><a >
       CombinedBuilderParameters</a></code>.
     </p>
     
@@ -1496,7 +1496,7 @@ CombinedConfiguration config = builder.getConfiguration();
       This type supports the settings common to all configurations. Additional
       settings specific to <code>CombinedConfigurationBuilder</code> are
       defined by the
-      <code><a href="../apidocs/org/apache/commons/configuration2/builder/CombinedBuilderProperties.html">
+      <code><a >
       CombinedBuilderProperties</a></code> interface. This includes
       </p>
 <ul>

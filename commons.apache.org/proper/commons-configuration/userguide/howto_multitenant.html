@@ -60,17 +60,17 @@
 <h3><a name="MultiFileConfigurationBuilder"></a>MultiFileConfigurationBuilder</h3>
         
 <p>
-          <code><a href="../apidocs/org/apache/commons/configuration2/builder/combined/MultiFileConfigurationBuilder.html">
+          <code><a >
           MultiFileConfigurationBuilder</a></code> is a specialized configuration
           builder implementation which internally manages a set of builders for
           <a href="howto_filebased.html">file-based configurations</a>. In the
           initialization parameters of this builder a file name pattern has to
           be passed. The pattern can contain keys that will be resolved using the
-          <code><a href="../apidocs/org/apache/commons/configuration2/interpol/ConfigurationInterpolator.html">
+          <code><a >
           ConfigurationInterpolator</a></code> every time the builder's
           <code>getConfiguration()</code> method is called. The resolved pattern
           is then interpreted as the name of a configuration file to be loaded
-          by a newly created <code><a href="../apidocs/org/apache/commons/configuration2/builder/FileBasedConfigurationBuilder.html">
+          by a newly created <code><a >
           FileBasedConfigurationBuilder</a></code>.
         </p>
         
@@ -83,7 +83,7 @@
         </p>
         
 <p>
-          When used in a <a href="howto_configurationbuilder.html">combined
+          When used in a <a href="howto_combinedconfiguration.html">combined
           configuration</a> it is often acceptable for a file
           matching a particular pattern to be missing. The behavior of
           <code>MultiFileConfigurationBuilder</code> regarding exceptions
@@ -99,12 +99,12 @@
 <h3><a name="DynamicCombinedConfiguration"></a>DynamicCombinedConfiguration</h3>
         
 <p>
-          The <code><a href="../apidocs/org/apache/commons/configuration2/builder/combined/CombinedConfigurationBuilder.html">
+          The <code><a >
           CombinedConfigurationBuilder</a></code> class allows multiple configuration files to be
           merged together. However, it will not collaborate with a <code>MultiFileConfiguration</code>
           properly since the underlying managed configuration will be different depending
           on the resolution of the location pattern.
-          <code><a href="../apidocs/org/apache/commons/configuration2/DynamicCombinedConfiguration.html">
+          <code><a >
           DynamicCombinedConfiguration</a></code> solves this by creating a new
           <code>CombinedConfiguration</code> for each pattern.
         </p>
@@ -114,10 +114,10 @@
         
 <p>
            This sample configuration illustrates how to use
-           <code><a href="../apidocs/org/apache/commons/configuration2/builder/combined/CombinedConfigurationBuilder.html">
+           <code><a >
            CombinedConfigurationBuilder</a></code>
            in combination with
-           <code><a href="../apidocs/org/apache/commons/configuration2/builder/combined/MultiFileConfigurationBuilder.html">
+           <code><a >
            MultiFileConfigurationBuilder</a></code> to create a multi-tenant
            configuration.
         </p>
@@ -201,17 +201,17 @@
         
 <p>
           When setting up a
-          <code><a href="../apidocs/org/apache/commons/configuration2/builder/combined/MultiFileConfigurationBuilder.html">
+          <code><a >
           MultiFileConfigurationBuilder</a></code> a special object with
           initialization parameters can be used as argument to the
           <code>configure()</code> method. It is of type
-          <code><a href="../apidocs/org/apache/commons/configuration2/builder/fluent/MultiFileBuilderParameters.html">
+          <code><a >
           MultiFileBuilderParameters</a></code> and can be obtained via the
           <code>multiFile()</code> method of a
-          <code><a href="../apidocs/org/apache/commons/configuration2/builder/fluent/Parameter.html">
+          <code><a >
           Parameters</a></code> object. The properties specific to this
           configuration type are defined by the
-          <code><a href="../apidocs/org/apache/commons/configuration2/builder/MultiFileBuilderProperties.html">
+          <code><a >
           MultiFileBuilderProperties</a></code> interface. They include
           </p>
 <ul>
@@ -260,7 +260,7 @@ XMLConfiguration config = builder.getConfiguration();
           a single configuration file. However, this either means the subcomponent
           has to be aware of the surrounding configuration and navigate past it or the
           application must be provided just the portion of the configuration it
-          can process. <code><a href="../apidocs/org/apache/commons/configuration2/PatternSubtreeConfigurationWrapper.html">
+          can process. <code><a >
           PatternSubtreeConfigurationWrapper</a></code> can be used for this purpose.
         </p>
         
@@ -269,7 +269,7 @@ XMLConfiguration config = builder.getConfiguration();
           attributes needed to make components work correctly injected into them.
           When working with Commons Configuration this works very well. Components
           simply need to have a
-          <code><a href="../apidocs/org/apache/commons/configuration2/HierarchicalConfiguration.html">
+          <code><a >
           HierarchicalConfiguration</a></code> attribute along with
           a corresponding setter and getter. The injection framework can then be
           used to provide the component with the correct configuration using
@@ -333,7 +333,7 @@ XMLConfiguration config = builder.getConfiguration();
           managed configuration instance can be declared directly as keys of
           this map. The configuration of the file to be loaded is an
           exceptional case: This information is stored internally as a
-          <code><a href="../apidocs/org/apache/commons/configuration2/io/FileHandler.html">
+          <code><a >
           FileHandler</a></code> object, and the properties of this object are
           contained in a sub map under the key <i>config-fileBased</i>.
         </p>

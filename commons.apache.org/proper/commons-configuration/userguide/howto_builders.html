@@ -49,7 +49,7 @@
     
 <p>
       <i>Commons Configuration</i> defines the generic
-      <code><a href="../apidocs/org/apache/commons/configuration2/builder/ConfigurationBuilder.html">
+      <code><a >
       ConfigurationBuilder</a></code> interface which is used for creating
       initialized configuration objects. The interface defines a
       <code>getConfiguration()</code> method returning a generic type
@@ -97,7 +97,7 @@
       <i>Commons Configuration</i> provides multiple concrete
       <code>ConfigurationBuilder</code> implementations supporting different
       features. The most basic implementation is
-      <code><a href="../apidocs/org/apache/commons/configuration2/builder/BasicConfigurationBuilder.html">
+      <code><a >
       BasicConfigurationBuilder</a></code>. It is the base class for all other
       builder implementations and defines a framework for creating and
       initializing configuration objects. The functionality provided is as
@@ -175,7 +175,7 @@ PropertiesConfiguration config = builder.getConfiguration();
       used by concrete <code>Configuration</code> implementations. So there is
       a fundamental set of initialization parameters supported by all classes
       derived from
-      <code><a href="../apidocs/org/apache/commons/configuration2/AbstractConfiguration.html">
+      <code><a >
       AbstractConfiguration</a></code>. Configurations loaded from a file
       also support these parameters plus additional ones for defining the file
       to be loaded. An XML-based configuration supports all basic and
@@ -186,7 +186,7 @@ PropertiesConfiguration config = builder.getConfiguration();
 <p>
       Exposing such parameter objects via a fluent interface becomes tricky in
       Java if inheritance is involved. In <i>Commons Configuration</i> the
-      <code><a href="../apidocs/org/apache/commons/configuration2/builder/fluent/Parameters.html">
+      <code><a >
       Parameters</a></code> class is responsible for the creation of parameters
       objects. It serves as a type-safe factory for parameter objects with
       support for inheritance. It defines a set of methods for creating
@@ -237,7 +237,7 @@ XMLBuilderParams xmlParams = params.xml()
         
 <td align="left"><code>basic()</code></td>
         
-<td><code><a href="../apidocs/org/apache/commons/configuration2/builder/fluent/BasicBuilderParameters.html">
+<td><code><a >
         BasicBuilderParameters</a></code></td>
         
 <td>Defines fundamental properties common to all <code>Configuration</code>
@@ -248,7 +248,7 @@ XMLBuilderParams xmlParams = params.xml()
         
 <td align="left"><code>fileBased()</code></td>
         
-<td><code><a href="../apidocs/org/apache/commons/configuration2/builder/fluent/FileBasedBuilderParameters.html">
+<td><code><a >
         FileBasedBuilderParameters</a></code></td>
         
 <td>Properties related to file-based configurations. For instance,
@@ -259,7 +259,7 @@ XMLBuilderParams xmlParams = params.xml()
         
 <td align="left"><code>combined()</code></td>
         
-<td><code><a href="../apidocs/org/apache/commons/configuration2/builder/fluent/CombinedBuilderParameters.html">
+<td><code><a >
         CombinedBuilderParameters</a></code></td>
         
 <td>This object is used by the specialized builder for combined
@@ -271,7 +271,7 @@ XMLBuilderParams xmlParams = params.xml()
         
 <td align="left"><code>jndi()</code></td>
         
-<td><code><a href="../apidocs/org/apache/commons/configuration2/builder/fluent/JndiBuilderParameters.html">
+<td><code><a >
         JndiBuilderParameters</a></code></td>
         
 <td>A parameters object for initializing JNDI configurations.</td>
@@ -281,7 +281,7 @@ XMLBuilderParams xmlParams = params.xml()
         
 <td align="left"><code>hierarchical()</code></td>
         
-<td><code><a href="../apidocs/org/apache/commons/configuration2/builder/fluent/HierarchicalBuilderParameters.html">
+<td><code><a >
         HierarchicalBuilderParameters</a></code></td>
         
 <td>Here special parameters common to all hierarchical configurations are
@@ -292,7 +292,7 @@ XMLBuilderParams xmlParams = params.xml()
         
 <td align="left"><code>xml()</code></td>
         
-<td><code><a href="../apidocs/org/apache/commons/configuration2/builder/fluent/XMLBuilderParameters.html">
+<td><code><a >
         XMLBuilderParameters</a></code></td>
         
 <td>The parameters for XML configurations.</td>
@@ -302,7 +302,7 @@ XMLBuilderParams xmlParams = params.xml()
         
 <td align="left"><code>properties()</code></td>
         
-<td><code><a href="../apidocs/org/apache/commons/configuration2/builder/fluent/PropertiesBuilderParameters.html">
+<td><code><a >
         PropertiesBuilderParameters</a></code></td>
         
 <td>The parameters for <a href="howto_properties.html">properties
@@ -313,7 +313,7 @@ XMLBuilderParams xmlParams = params.xml()
         
 <td align="left"><code>multiFile()</code></td>
         
-<td><code><a href="../apidocs/org/apache/commons/configuration2/builder/fluent/MultiFileBuilderParameters.html">
+<td><code><a >
         MultiFileBuilderParameters</a></code></td>
         
 <td>This parameters class is used by the builder for
@@ -325,10 +325,10 @@ XMLBuilderParams xmlParams = params.xml()
         
 <td align="left"><code>database()</code></td>
         
-<td><code><a href="../apidocs/org/apache/commons/configuration2/builder/fluent/DatabaseBuilderParameters.html">
+<td><code><a >
         DatabaseBuilderParameters</a></code></td>
         
-<td>The parameters for <code><a href="../apidocs/org/apache/commons/configuration2/DatabaseConfiguration.html">
+<td>The parameters for <code><a >
         DatabaseConfiguration</a></code>.</td>
       </tr>
       </tbody></table>
@@ -385,7 +385,7 @@ XMLBuilderParams xmlParams = params.xml()
       repeat yourself) principle, <i>Commons Configuration</i> supports
       default initialization parameters for configuration sources. It was
       already shown how an instance of the
-      <code><a href="../apidocs/org/apache/commons/configuration2/builder/fluent/Parameters.html">
+      <code><a >
       Parameters</a></code> class is used to create initialization parameter
       objects for various types of configuration sources. In addition to the
       methods for creating these objects, <code>Parameters</code> also deals
@@ -396,7 +396,7 @@ XMLBuilderParams xmlParams = params.xml()
       <code>Parameters</code> defines methods for registering so-called
       <i>defaults handler</i> objects. A defaults handler is an object
       implementing the
-      <code><a href="../apidocs/org/apache/commons/configuration2/builder/DefaultParametersHandler.html">
+      <code><a >
       DefaultParametersHandler</a></code> interface. This interface defines a
       single method which accepts a parameters object of a generic type and
       populates it according to its logic. Such handlers can be registered for
@@ -486,7 +486,7 @@ params.registerDefaultsHandler(PropertiesBuilderParameters.class, propsHandler);
       across all modules to create parameter objects. The actual functionality
       of managing and invoking <code>DefaultParametersHandler</code> objects is
       implemented by the
-      <code><a href="../apidocs/org/apache/commons/configuration2/builder/DefaultParametersHandler.html">
+      <code><a >
       DefaultParametersManager</a></code> class - <code>Parameters</code> just
       delegates to a wrapped instance. In some usage scenarios it may make sense
       to use <code>DefaultParametersManager</code> directly.
@@ -499,7 +499,7 @@ params.registerDefaultsHandler(PropertiesBuilderParameters.class, propsHandler);
 <p>
       After the registration of default handlers has been discussed, it is still
       open how such handlers can be created. Because the
-      <code><a href="../apidocs/org/apache/commons/configuration2/builder/DefaultParametersHandler.html">
+      <code><a >
       DefaultParametersHandler</a></code> interface is very simple, it is easy
       to create a specialized implementation. The following listing shows how
       the <code>EncodingDefaultsHandler</code> from the previous example could
@@ -536,7 +536,7 @@ params.registerDefaultsHandler(PropertiesBuilderParameters.class, propsHandler);
       implementation of a specialized <code>DefaultParametersHandler</code> is
       not necessary because <i>Commons Configuration</i> provides a pretty
       generic default implementation:
-      <code><a href="../apidocs/org/apache/commons/configuration2/builder/CopyObjectDefaultHandler.html">
+      <code><a >
       CopyObjectDefaultHandler</a></code>. The name stems from the fact that a
       handler is constructed from a parameters object to be used as reference.
       In the <code>initializeDefaults()</code> method the handler copies all

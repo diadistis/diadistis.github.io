@@ -61,7 +61,7 @@ database.timeout = 60000
     
 <p>
       The easiest way to read this file is via the
-      <code><a href="../apidocs/org/apache/commons/configuration2/builder/fluent/Configurations.html">
+      <code><a >
       Configurations</a></code> helper class. This class offers a bunch of
       convenience methods for creating configuration objects from different
       sources. For reading a properties file the code looks as follows:
@@ -86,7 +86,7 @@ catch (ConfigurationException cex)
 <h3><a name="Accessing_properties"></a>Accessing properties</h3>
     
 <p>
-      The <code><a href="../apidocs/org/apache/commons/configuration2/Configuration.html">
+      The <code><a >
       Configuration</a></code> object obtained in the last step can now be used
       to query the values for the stored configuration properties. For this
       purpose, numerous get methods for different property types are available.
@@ -139,7 +139,7 @@ long dbTimeout = config.getLong("database.timeout");
     
 <p>
       Reading this file works analogously to reading a properties file. Again a
-      <code><a href="../apidocs/org/apache/commons/configuration2/builder/fluent/Configurations.html">
+      <code><a >
       Configurations</a></code> instance is needed (by the way, this class is
       thread-safe, and an instance can be shared and reused to read multiple
       configuration sources), but this time we use the <code>xml()</code>
@@ -162,7 +162,7 @@ catch (ConfigurationException cex)
     
 <p>
       The <code>xml()</code> method returns an object of type
-      <code><a href="../apidocs/org/apache/commons/configuration2/XMLConfiguration.html">
+      <code><a >
       XMLConfiguration</a></code>. This class implements the
       <code>Configuration</code> interface, but offers some more functionality
       to access properties in a more structured manner. The reader may also have
@@ -268,7 +268,7 @@ config.addProperty("database.type", "production");
       API is described in the section
       <a href="howto_builders.html#Configuration_Builders">Configuration
       builders</a>. For simple use cases, the
-      <code><a href="../apidocs/org/apache/commons/configuration2/builder/fluent/Configurations.html">
+      <code><a >
       Configurations</a></code> class we have already used has again some convenience
       methods. The following code fragment shows how a configuration is read via
       a builder, manipulated, and finally saved again:
